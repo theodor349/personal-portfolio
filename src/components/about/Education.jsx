@@ -15,7 +15,7 @@ const educationContent = [
   },
   {
     year: "2019",
-    degree: "Hight Technical Gymnasium",
+    degree: "Higher Technical Gymnasium",
     institute: "Hansenberg",
     details: ``,
   },
