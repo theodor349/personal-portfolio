@@ -1,10 +1,16 @@
 import React from "react";
 
+const awards = [
+  "3th Place - DLG Competition 2020",
+  "1st Place - DM in Game Development 2017 - Group",
+  "1st Place - DM in Game Development 2017 - Fan Favorite",
+]
+
 const achievementsContent = [
-  { title: "12", subTitle1: "years of", subTitle2: "experience" },
-  { title: "97", subTitle1: "completed", subTitle2: "projects" },
-  { title: "81", subTitle1: "Happy", subTitle2: "customers" },
-  { title: "53", subTitle1: "awards", subTitle2: "won" },
+  { title: `${new Date().getFullYear() - 2014}`, subTitle1: "years of", subTitle2: "coding" },
+  { title: `${new Date().getFullYear() - 2020}`, subTitle1: "years of", subTitle2: "experiance" },
+  // { title: "4", subTitle1: "completed", subTitle2: "projects" },
+  // { title: `${awards.length}`, subTitle1: "awards", subTitle2: "won" },
 ];
 
 const Achievements = () => {

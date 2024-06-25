@@ -1,16 +1,19 @@
 import React from "react";
 
+const today = new Date();
+const bDay = new Date(`${today.getFullYear()}-03-06`);
+const ageYear = today < bDay ? today.getFullYear() - 1999 - 1 : today.getFullYear() - 1999;
+
+
 const personalInfoContent = [
-  { meta: "first name", metaInfo: "Steve", hasColor: "" },
-  { meta: "last name", metaInfo: "Milner", hasColor: "" },
-  { meta: "Age", metaInfo: "27 Years", hasColor: "" },
-  { meta: "Nationality", metaInfo: "Tunisian", hasColor: "" },
-  { meta: "Freelance", metaInfo: "Available", hasColor: "green" },
-  { meta: "Address", metaInfo: "Tunis", hasColor: "" },
-  { meta: "phone", metaInfo: "+21621184010", hasColor: "" },
-  { meta: "Email", metaInfo: "you@mail.com", hasColor: "" },
-  { meta: "Skype", metaInfo: " steve.milner", hasColor: "" },
-  { meta: "langages", metaInfo: "French, English", hasColor: "" },
+  { meta: "first name", metaInfo: "Theodor", hasColor: "" },
+  { meta: "last name", metaInfo: "Risager", hasColor: "" },
+  { meta: "Age", metaInfo: `${ageYear} Years`, hasColor: "" },
+  { meta: "Nationality", metaInfo: "Danish", hasColor: "" },
+  { meta: "Address", metaInfo: "Aalborg, Denmark", hasColor: "" },
+  { meta: "phone", metaInfo: "+45 4023 8867", hasColor: "" },
+  { meta: "Email", metaInfo: "theodor349@mail.com", hasColor: "" },
+  { meta: "langages", metaInfo: "Danish, English", hasColor: "" },
 ];
 
 const PersonalInfo = () => {

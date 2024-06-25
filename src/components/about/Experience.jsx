@@ -2,25 +2,28 @@ import React from "react";
 
 const experienceContent = [
   {
-    year: "   2018 - Present",
-    position: " Web Developer",
-    compnayName: "Envato",
-    details: `  Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
-        adipisicing elit`,
+    year: "2024 - Present",
+    position: "Software Pilot",
+    compnayName: "Trifork",
+    details: `Starting 12th of august`,
   },
   {
-    year: "2013 - 2018",
-    position: " UI/UX Designer",
-    compnayName: "Themeforest",
-    details: `Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol
-        elit, tempor incididunt`,
+    year: "2021 - 2024",
+    position: "Teaching Assitant",
+    compnayName: "Aalborg University",
+    details: `Used my explaining skill to help newer students understand and apply course materials in Software Development and Syntax and Semantics`,
   },
   {
-    year: "2005 - 2013",
-    position: "Consultant",
-    compnayName: "Videohive",
-    details: `Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur
-        elit, sed do eiusmod tempor duntt`,
+    year: "2021 - 2024",
+    position: "Student RPA Developer",
+    compnayName: "Aalborg University",
+    details: `Initialy I automated manual processes using UiPath and later I headed the development our our in house RPA management gateway`,
+  },
+  {
+    year: "2020 - 2022",
+    position: "Data Analysist",
+    compnayName: "Epoka",
+    details: `Applyied my developer skills to automate their migration to their new ERP system`,
   },
 ];
 

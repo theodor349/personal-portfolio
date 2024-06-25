@@ -4,7 +4,7 @@ const SEO = ({ pageTitle }) => (
   <>
     <Head>
       <title>
-        {pageTitle && `${pageTitle} - Theodor Risager's Personal Portfolio}`}
+        {pageTitle && `${pageTitle}`}
       </title>
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta name="description" content="Theodor Risager's Personal Portfolio" />

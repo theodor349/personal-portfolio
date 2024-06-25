@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpg";
+import heroImgMobile from "../../../public/assets/img/hero/small_relaxed.jpg";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import AboutMain from "../about";
 import Image from "next/image";
 
 const heroContent = {
-  heroImage: "/assets/img/hero/dark.jpg",
+  heroImage: "/assets/img/hero/large_relaxed.jpg",
   heroMobileImage: heroImgMobile,
-  heroTitleName: "steve milner",
-  heroDesignation: "web designer",
-  heroDescriptions: `I'm a Tunisian based web designer & front‑end developer focused on
-  crafting clean & user‑friendly experiences, I am passionate about
-  building excellent software that improves the lives of those
-  around me.`,
+  heroTitleName: "Theodor Risager",
+  heroDesignation: "backend developer",
+  heroDescriptions: `I'm a back‑end developer who keeps improving based in Denmark. 
+  I am passionate about building quility software which improves over time.`,
   heroBtn: "more about me",
 };
 

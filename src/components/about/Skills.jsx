@@ -1,14 +1,27 @@
 import React from "react";
 
+// .Net
+// WPF
+// Unity 
+// SQL
+// UiPath
+// Power Query 
+// Type Script
+// React 
+
+
+
 const skillsContent = [
-  { skillClass: "p25", skillPercent: "25", skillName: "HTML" },
-  { skillClass: "p89", skillPercent: "89", skillName: "JAVASCRIPT" },
-  { skillClass: "p70", skillPercent: "70", skillName: "CSS" },
-  { skillClass: "p66", skillPercent: "66", skillName: "PHP" },
-  { skillClass: "p95", skillPercent: "95", skillName: "WORDPRESS" },
-  { skillClass: "p50", skillPercent: "50", skillName: "JQUERY" },
-  { skillClass: "p65", skillPercent: "65", skillName: "ANGULAR" },
-  { skillClass: "p45", skillPercent: "45", skillName: "REACT" },
+  { skillClass: "p90", skillPercent: "90", skillName: ".Net" },
+  { skillClass: "p80", skillPercent: "80", skillName: "SQL" },
+  { skillClass: "p80", skillPercent: "80", skillName: "WPF" },
+  { skillClass: "p60", skillPercent: "60", skillName: "Unity" },
+
+  { skillClass: "p90", skillPercent: "90", skillName: "UiPath" },
+  { skillClass: "p60", skillPercent: "60", skillName: "Power Query" },
+
+  { skillClass: "p40", skillPercent: "40", skillName: "TypeScript" },
+  { skillClass: "p40", skillPercent: "40", skillName: "REACT" },
 ];
 
 const Skills = () => {

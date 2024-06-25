@@ -16,7 +16,7 @@ const menuItem = [
   { icon: "fa-user", menuName: "About" },
   { icon: "fa-briefcase", menuName: "Portfolio" },
   { icon: "fa-envelope-open", menuName: "Contact" },
-  { icon: "fa-comments", menuName: "Blog" },
+  // { icon: "fa-comments", menuName: "Blog" },
 ];
 
 const HomeDark = () => {
@@ -25,7 +25,7 @@ const HomeDark = () => {
   }, []);
   return (
     <Wrapper>
-      <SEO pageTitle={"Home Dark"} />
+      <SEO pageTitle={"Theodor Risager"} />
 
       <div className="yellow">
         <SwitchDark />
