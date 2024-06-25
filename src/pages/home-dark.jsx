@@ -14,7 +14,7 @@ import SwitchDark from "../components/switch/SwitchDark";
 const menuItem = [
   { icon: "fa-home", menuName: "Home" },
   { icon: "fa-user", menuName: "About" },
-  { icon: "fa-briefcase", menuName: "Portfolio" },
+  // { icon: "fa-briefcase", menuName: "Portfolio" },
   { icon: "fa-envelope-open", menuName: "Contact" },
   // { icon: "fa-comments", menuName: "Blog" },
 ];
@@ -72,7 +72,7 @@ const HomeDark = () => {
             </TabPanel>
             {/* About Content Ends */}
 
-            {/* Portfolio Content Starts */}
+{/* Portfolio Content Starts
             <TabPanel className="portfolio professional">
               <div
                 className="title-section text-start text-sm-center"
@@ -84,10 +84,9 @@ const HomeDark = () => {
                 </h1>
                 <span className="title-bg">works</span>
               </div>
-              {/* End title */}
               <Portfolio />
             </TabPanel>
-            {/* Portfolio Content Ends */}
+{/* Portfolio Content Ends */}
 
             {/* Contact Content Starts */}
             <TabPanel className="contact">
