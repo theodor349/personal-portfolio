@@ -10,10 +10,10 @@ const personalInfoContent = [
   { meta: "last name", metaInfo: "Risager", hasColor: "" },
   { meta: "Age", metaInfo: `${ageYear} Years`, hasColor: "" },
   { meta: "Nationality", metaInfo: "Danish", hasColor: "" },
-  { meta: "Address", metaInfo: "Aalborg, Denmark", hasColor: "" },
-  { meta: "phone", metaInfo: "+45 4023 8867", hasColor: "" },
-  { meta: "Email", metaInfo: "theodor349@mail.com", hasColor: "" },
+  { meta: "Address", metaInfo: "Aalborg, DK", hasColor: "" },
   { meta: "langages", metaInfo: "Danish, English", hasColor: "" },
+  { meta: "phone", metaInfo: "+45 4023 8867", hasColor: "" },
+  { meta: "Email", metaInfo: "theodor349@gmail.com", hasColor: "" },
 ];
 
 const PersonalInfo = () => {
