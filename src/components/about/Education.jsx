@@ -27,7 +27,7 @@ const Education = () => {
       {educationContent.map((val, i) => (
         <li key={i}>
           <div className="icon">
-            <i className="fa fa-briefcase"></i>
+            <i className="fa fa-book"></i>
           </div>
           <span className="time open-sans-font text-uppercase">{val.year}</span>
           <h5 className="poppins-font text-uppercase">
