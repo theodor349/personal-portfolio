@@ -16,11 +16,11 @@ const ModalMain = ({ modalId, setGetModal }) => {
     );
   } else if (modalId === 2) {
     return (
-      <ModalTwo modalId={modalId} setGetModal={setGetModal}/>
+      <ModalOne modalId={modalId} setGetModal={setGetModal}/>
     );
   } else if (modalId === 3) {
     return (
-      <ModalThree modalId={modalId} setGetModal={setGetModal}/>
+      <ModalOne modalId={modalId} setGetModal={setGetModal}/>
     );
   } else if (modalId === 4) {
     return (

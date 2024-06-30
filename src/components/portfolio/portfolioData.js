@@ -1,6 +1,6 @@
 import Image1 from "../../../public/assets/img/portfolio/teaching_flipper.jpg";
 import Image2 from "../../../public/assets/img/portfolio/weekly_review_large.jpg";
-import Image3 from "../../../public/assets/img/portfolio/project-3.jpg";
+import Image3 from "../../../public/assets/img/portfolio/work_tracker.jpg";
 import Image4 from "../../../public/assets/img/portfolio/project-4.jpg";
 import Image5 from "../../../public/assets/img/portfolio/project-5.jpg";
 import Image6 from "../../../public/assets/img/portfolio/project-6.jpg";
@@ -34,6 +34,20 @@ const PortfolioData = [
         language: ".Net, Blazor, SQL Server, Entity Framework, Azure",
         preview: "weeklyreview.theodorrisager.dk",
         link: "https://weeklyreview.theodorrisager.dk/",
+      },
+    ],
+  },
+  {
+    id: 3,
+    type: "Work Tracker",
+    image: Image3,
+    tag: ["react", "typescript", "google_sheets"],
+    delayAnimation: "100",
+    modalDetails: [
+      {
+        language: "React, TypeScript, Google Sheets",
+        preview: "work-time.theodorrisager.dk",
+        link: "https://work-time.theodorrisager.dk/",
       },
     ],
   },
