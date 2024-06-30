@@ -20,28 +20,14 @@ const ModalOne = ({modalId,setGetModal}) => {
                   {item.modalDetails.map((details, i) => {
                     return (
                       <div key={i} className="row open-sans-font">
-                        <div className="col-12 col-sm-6 mb-2">
-                          <i className="fa fa-file-text-o pr-2"></i>
-                          Project:{" "}
-                          <span className="ft-wt-600 uppercase">
-                            {details.project}
-                          </span>
-                        </div>
-                        <div className="col-12 col-sm-6 mb-2">
-                          <i className="fa fa-user-o pr-2"></i>
-                          Client :{" "}
-                          <span className="ft-wt-600 uppercase">
-                            {details.client}
-                          </span>
-                        </div>
-                        <div className="col-12 col-sm-6 mb-2">
+                        <div className="mb-2">
                           <i className="fa fa-code pr-2"></i>
-                          Language :{" "}
+                          Tech Stack :{" "}
                           <span className="ft-wt-600 uppercase">
                             {details.language}
                           </span>
                         </div>
-                        <div className="col-12 col-sm-6 mb-2">
+                        <div className="mb-2">
                           <i className="fa fa-external-link pr-2"></i>
                           Preview :{" "}
                           <a
