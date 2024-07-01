@@ -8,7 +8,7 @@ const awards = [
 
 const achievementsContent = [
   { title: `${new Date().getFullYear() - 2014}`, subTitle1: "years of", subTitle2: "coding" },
-  { title: `${new Date().getFullYear() - 2020}`, subTitle1: "years of", subTitle2: "experiance" },
+  { title: `${new Date().getFullYear() - 2020}`, subTitle1: "years of", subTitle2: "experience" },
   // { title: "4", subTitle1: "completed", subTitle2: "projects" },
   // { title: `${awards.length}`, subTitle1: "awards", subTitle2: "won" },
 ];
