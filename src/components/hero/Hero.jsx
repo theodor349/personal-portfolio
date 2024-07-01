@@ -10,8 +10,7 @@ const heroContent = {
   heroMobileImage: heroImgMobile,
   heroTitleName: "Theodor Risager",
   heroDesignation: "backend developer",
-  heroDescriptions: `I'm a back‑end developer who keeps improving based in Denmark. 
-  I am passionate about building quility software which improves over time.`,
+  heroDescriptions: `Evolving backend developer based in Denmark, with a passion for improvement. Crafting high-quality software which improves over time.`,
   heroBtn: "more about me",
 };
 
