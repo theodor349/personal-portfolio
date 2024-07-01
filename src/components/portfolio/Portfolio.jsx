@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import PortfolioData from "./portfolioData";
 import Image from "next/image";
@@ -7,6 +7,18 @@ import ModalMain from "./modal/ModalMain";
 const Portfolio = () => {
   const [getModal, setGetModal] = useState(false);
   const [modalId, setModalId] = useState(1);
+  const [extraHeight, setExtraHeight] = useState(0);
+
+  const contentRef = useRef(null);
+  const extraRef = useRef(null);
+
+  useEffect(() => {
+    const contentHeight = contentRef.current?.offsetHeight || 0;
+    const windowHeight = window.innerHeight;
+  
+    const extraHeightCalc = windowHeight - contentHeight - 227;
+    setExtraHeight(extraHeightCalc); // Update state with remaining height
+  }, []); // Run only once on component mount
 
   const handleModal = (id) => {
     setGetModal(true);
@@ -15,7 +27,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <div className="portfolio-main">
+      <div className="portfolio-main" ref={contentRef}>
         <Tabs>
           <TabList className="portfolio-tab-list" data-aos="fade-up">
             <Tab>ALL</Tab>
@@ -165,6 +177,7 @@ const Portfolio = () => {
         </Tabs>
       </div>
       {getModal && <ModalMain modalId={modalId} setGetModal={setGetModal} />}{" "}
+      <div ref={extraRef} style={{ height: extraHeight + 'px' }}></div>
     </>
   );
 };

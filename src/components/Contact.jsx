@@ -1,10 +1,22 @@
-import React, { useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const form = useRef();
+  const [extraHeight, setExtraHeight] = useState(0);
+
+  const extraRef = useRef(null);
+
+  useEffect(() => {
+    const contentHeight = form.current?.offsetHeight || 0;
+    const windowHeight = window.innerHeight;
+  
+    const extraHeightCalc = windowHeight - contentHeight - 227;
+    setExtraHeight(extraHeightCalc); // Update state with remaining height
+  }, []); // Run only once on component mount
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -98,6 +110,7 @@ const Contact = () => {
           {/* End .col */}
         </div>
       </form>
+      <div ref={extraRef} style={{ height: extraHeight + 'px' }}></div>
     </>
   );
 };
