@@ -46,8 +46,8 @@ const PortfolioData = [
     modalDetails: [
       {
         language: "React, TypeScript, Google Sheets",
-        preview: "work-time.theodorrisager.dk",
-        link: "https://work-time.theodorrisager.dk/",
+        preview: "work-tracker.theodorrisager.dk",
+        link: "https://work-tracker.theodorrisager.dk/",
       },
     ],
   },
