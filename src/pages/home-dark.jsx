@@ -108,7 +108,7 @@ const HomeDark = () => {
                 <span className="title-bg">contact</span>
               </div>
               <div
-                className="container"
+                className="container p-0"
                 data-aos="fade-up"
                 data-aos-duration="1200"
               >
