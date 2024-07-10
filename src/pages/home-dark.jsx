@@ -119,9 +119,7 @@ const HomeDark = () => {
                       {"Don't"} be shy !
                     </h3>
                     <p className="open-sans-font mb-4">
-                      Feel free to get in touch with me. I am always open to
-                      discussing new projects, creative ideas or opportunities
-                      to be part of your visions.
+                      Don't hesitate to get in touch! I'm always excited to discuss new ventures, creative concepts, or ways to contribute to your vision.
                     </p>
                     <Address />
                     {/* End Address */}
