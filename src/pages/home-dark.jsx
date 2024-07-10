@@ -119,7 +119,7 @@ const HomeDark = () => {
                       {"Don't"} be shy !
                     </h3>
                     <p className="open-sans-font mb-4">
-                      Don't hesitate to get in touch! I'm always excited to discuss new ventures, creative concepts, or ways to contribute to your vision.
+                      {`Don't hesitate to get in touch! I'm always excited to discuss new ventures, creative concepts, or ways to contribute to your vision.`}
                     </p>
                     <Address />
                     {/* End Address */}
