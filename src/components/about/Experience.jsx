@@ -5,7 +5,7 @@ const experienceContent = [
     year: "2024 - Present",
     position: "Software Pilot",
     compnayName: "Trifork",
-    details: `Starting 12th of august`,
+    details: `As a Software Pilot, I am responsible for ensuring that the software we produce is of the necessary quality and meets our standards for security and performance`,
   },
   {
     year: "2021 - 2024",
