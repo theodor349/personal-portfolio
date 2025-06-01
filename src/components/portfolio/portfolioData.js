@@ -11,20 +11,6 @@ import Image9 from "../../../public/assets/img/portfolio/project-9.jpg";
 const PortfolioData = [
   {
     id: 1,
-    type: "Teaching Flipper",
-    image: Image1,
-    tag: ["nextjs", "typescript", "sql", "react"],
-    delayAnimation: "0",
-    modalDetails: [
-      {
-        language: "TypeScript, NextJS, PostgresSQL, Prisma, TailwindCSS, Vercel",
-        preview: "www.teaching-flipper.theodorrisager.dk",
-        link: "https://teaching-flipper.theodorrisager.dk/",
-      },
-    ],
-  },
-  {
-    id: 2,
     type: "Weekly Review",
     image: Image2,
     tag: ["blazor", ".net", "sql"],
@@ -38,7 +24,7 @@ const PortfolioData = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     type: "Work Tracker",
     image: Image3,
     tag: ["react", "typescript", "google_sheets"],
