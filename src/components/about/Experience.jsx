@@ -2,10 +2,10 @@ import React from "react";
 
 const experienceContent = [
   {
-    year: "2024 - Present",
+    year: "2024 - 2025",
     position: "Software Pilot",
     compnayName: "Trifork",
-    details: `As a Software Pilot, I am responsible for ensuring that the software we produce is of the necessary quality and meets our standards for security and performance`,
+    details: `As a Software Pilot, I was responsible for ensuring that the software we produced was of the necessary quality and met our standards for security and performance`,
   },
   {
     year: "2021 - 2024",

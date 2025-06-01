@@ -13,6 +13,10 @@ const SocialShare = [
     iconName: "fa fa-facebook",
     link: "https://www.facebook.com/theodor.risager",
   },
+  {
+    iconName: "fa fa-rss",
+    link: "https://theodorrisager.substack.com/",
+  },
 ];
 
 const Social = () => {
