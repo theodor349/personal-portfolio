@@ -1,5 +1,6 @@
 import Image from "next/image"
 
+import { Contact } from "@/components/contact"
 import { Portfolio } from "@/components/portfolio"
 
 export default function Page() {
@@ -70,6 +71,7 @@ export default function Page() {
       </header>
 
       <Portfolio />
+      <Contact />
     </main>
   )
 }

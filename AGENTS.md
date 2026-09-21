@@ -13,5 +13,5 @@ This app will showcase his personal projects, CV and information for potential e
 
 ## Project Architecture
 - Files are keept small and reusable components are created when possible to keep main components lean and readable!
-- Shadcn is the component libary used.
+- Shadcn is the component libary used. So whenever you make new UI changes check for existing UI components and install new ones if necessary.
 - Assume that the project is already running, as this is a developer machine.
