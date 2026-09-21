@@ -2,6 +2,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+The CV is copied from the sibling `../cv` repository before local development
+and production builds. Run it directly with:
+
+```bash
+npm run sync:cv
+```
+
+Set `CV_SOURCE_DIR` if the local repository is elsewhere. In deployment, set a
+`CV_GITHUB_TOKEN` secret with read-only Contents access to the private
+`theodor349/Theodor-Risager-CV` repository.
+
 First, run the development server:
 
 ```bash

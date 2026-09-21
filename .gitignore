@@ -19,6 +19,7 @@
 
 # production
 /build
+/public/cv/
 
 # misc
 .DS_Store
