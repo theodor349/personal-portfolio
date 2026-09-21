@@ -10,17 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 This is the personal website of the Theodor Risager, he is a software engineer with a passion for developer tooling and now agentic workflows.
 This app will showcase his personal projects, CV and information for potential employers. 
-The color theme is following his CV and company website justenoughsolutions.com:
-:root {
-  --blue: #2764f0;
-  --blue-dark: #174bc4;
-  --blue-soft: #eaf0ff;
-  --ink: #121a2b;
-  --paper: #f7f8fb;
-  --surface: #ffffff;
-  --line: #dfe4ed;
-  --muted: #667085;
-}
 
 ## Project Architecture
 - Files are keept small and reusable components are created when possible to keep main components lean and readable!
+- Shadcn is the component libary used.
