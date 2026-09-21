@@ -104,7 +104,7 @@ export function Portfolio() {
     >
       <div className="mb-10 max-w-2xl sm:mb-14">
         <p className="mb-3 font-mono text-xs font-medium tracking-[0.22em] text-primary uppercase">
-          Selected work
+          Portfolio
         </p>
         <h2
           id="work-heading"

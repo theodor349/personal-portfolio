@@ -34,120 +34,109 @@ export function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="mx-auto w-full max-w-6xl px-6 pt-8 pb-10 sm:px-10 sm:pt-12 sm:pb-14 lg:px-16"
+      className="mx-auto w-full max-w-6xl px-6 pt-8 pb-24 sm:px-10 sm:pt-12 sm:pb-32 lg:px-16"
     >
-      <div className="relative overflow-hidden rounded-4xl border border-border bg-card px-6 py-10 shadow-sm sm:px-10 sm:py-14 lg:px-14">
-        <div
-          aria-hidden="true"
-          className="absolute -right-24 -bottom-32 size-80 rounded-full bg-primary/15 blur-3xl"
-        />
-
-        <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.8fr)] lg:items-end lg:gap-20">
-          <div className="contents lg:block">
-            <div className="order-1">
-              <p className="mb-3 font-mono text-xs font-medium tracking-[0.22em] text-primary uppercase">
-                Get in touch
-              </p>
-              <h2
-                id="contact-heading"
-                className="max-w-xl text-4xl font-semibold tracking-[-0.04em] text-balance sm:text-5xl"
-              >
-                Let&apos;s build something useful.
-              </h2>
-            </div>
-            <div className="order-3 overflow-hidden rounded-3xl border border-border bg-muted lg:mt-8">
-              <iframe
-                src="https://maps.google.com/maps?q=56.1629%2C10.2039&z=6&output=embed"
-                title="Map showing Aarhus, Denmark"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-                className="h-72 w-full"
-              />
-            </div>
+      <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.8fr)] lg:items-end lg:gap-20">
+        <div className="contents lg:block">
+          <div className="order-1">
+            <p className="mb-3 font-mono text-xs font-medium tracking-[0.22em] text-primary uppercase">
+              Get in touch
+            </p>
+            <h2
+              id="contact-heading"
+              className="max-w-xl text-4xl font-semibold tracking-[-0.04em] text-balance sm:text-5xl"
+            >
+              Let&apos;s get building.
+            </h2>
           </div>
-
-          <address className="order-2 grid gap-3 not-italic sm:grid-cols-2 lg:order-none lg:grid-cols-1">
-            <Button
-              variant="outline"
-              nativeButton={false}
-              render={<a href="tel:+4540238867" />}
-              className={linkClassName}
-            >
-              <Phone aria-hidden="true" className="size-5 text-primary" />
-              <span>
-                <span className="block text-xs text-muted-foreground">
-                  Phone
-                </span>
-                <span className="font-medium">+45 4023 8867</span>
-              </span>
-            </Button>
-            <Button
-              variant="outline"
-              nativeButton={false}
-              render={<a href="mailto:theodor349@gmail.com" />}
-              className={linkClassName}
-            >
-              <Mail aria-hidden="true" className="size-5 text-primary" />
-              <span className="min-w-0">
-                <span className="block text-xs text-muted-foreground">
-                  Email
-                </span>
-                <span className="block truncate font-medium">
-                  theodor349@gmail.com
-                </span>
-              </span>
-            </Button>
-            <Button
-              variant="outline"
-              nativeButton={false}
-              render={
-                <a
-                  href="https://linkedin.com/in/theodor-risager"
-                  target="_blank"
-                  rel="noreferrer"
-                />
-              }
-              className={linkClassName}
-            >
-              <LinkedInIcon />
-              <span>
-                <span className="block text-xs text-muted-foreground">
-                  LinkedIn
-                </span>
-                <span className="font-medium">theodor-risager</span>
-              </span>
-              <ArrowUpRight
-                aria-hidden="true"
-                className="ml-auto size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Button>
-            <Button
-              variant="outline"
-              nativeButton={false}
-              render={
-                <a
-                  href="https://github.com/theodor349"
-                  target="_blank"
-                  rel="noreferrer"
-                />
-              }
-              className={linkClassName}
-            >
-              <GitHubIcon />
-              <span>
-                <span className="block text-xs text-muted-foreground">
-                  GitHub
-                </span>
-                <span className="font-medium">theodor349</span>
-              </span>
-              <ArrowUpRight
-                aria-hidden="true"
-                className="ml-auto size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Button>
-          </address>
+          <div className="order-3 overflow-hidden rounded-3xl border border-border bg-muted lg:mt-8">
+            <iframe
+              src="https://maps.google.com/maps?q=56.1629%2C10.2039&z=6&output=embed"
+              title="Map showing Aarhus, Denmark"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              className="h-72 w-full"
+            />
+          </div>
         </div>
+
+        <address className="order-2 grid gap-3 not-italic sm:grid-cols-2 lg:order-none lg:grid-cols-1">
+          <Button
+            variant="outline"
+            nativeButton={false}
+            render={<a href="tel:+4540238867" />}
+            className={linkClassName}
+          >
+            <Phone aria-hidden="true" className="size-5 text-primary" />
+            <span>
+              <span className="block text-xs text-muted-foreground">Phone</span>
+              <span className="font-medium">+45 4023 8867</span>
+            </span>
+          </Button>
+          <Button
+            variant="outline"
+            nativeButton={false}
+            render={<a href="mailto:theodor349@gmail.com" />}
+            className={linkClassName}
+          >
+            <Mail aria-hidden="true" className="size-5 text-primary" />
+            <span className="min-w-0">
+              <span className="block text-xs text-muted-foreground">Email</span>
+              <span className="block truncate font-medium">
+                theodor349@gmail.com
+              </span>
+            </span>
+          </Button>
+          <Button
+            variant="outline"
+            nativeButton={false}
+            render={
+              <a
+                href="https://linkedin.com/in/theodor-risager"
+                target="_blank"
+                rel="noreferrer"
+              />
+            }
+            className={linkClassName}
+          >
+            <LinkedInIcon />
+            <span>
+              <span className="block text-xs text-muted-foreground">
+                LinkedIn
+              </span>
+              <span className="font-medium">theodor-risager</span>
+            </span>
+            <ArrowUpRight
+              aria-hidden="true"
+              className="ml-auto size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </Button>
+          <Button
+            variant="outline"
+            nativeButton={false}
+            render={
+              <a
+                href="https://github.com/theodor349"
+                target="_blank"
+                rel="noreferrer"
+              />
+            }
+            className={linkClassName}
+          >
+            <GitHubIcon />
+            <span>
+              <span className="block text-xs text-muted-foreground">
+                GitHub
+              </span>
+              <span className="font-medium">theodor349</span>
+            </span>
+            <ArrowUpRight
+              aria-hidden="true"
+              className="ml-auto size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </Button>
+        </address>
       </div>
     </section>
   )
