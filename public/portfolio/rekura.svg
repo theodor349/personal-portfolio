@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 600 600">
+    <defs>
+        <clipPath id="circle-clip">
+            <circle cx="300" cy="300" r="289"/>
+        </clipPath>
+    </defs>
+
+    <!-- Background circle -->
+    <circle cx="300" cy="300" r="289" fill="#f3f3f3"/>
+
+    <!-- Shadow effect -->
+    <circle cx="300" cy="300" r="289" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="2"/>
+
+    <!-- Check-square icon scaled up -->
+    <g transform="translate(125, 125) scale(14.58)">
+        <polyline
+                points="9 11 12 14 22 4"
+                fill="none"
+                stroke="#464545"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+        />
+        <path
+                d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                fill="none"
+                stroke="#464545"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+        />
+    </g>
+</svg>
