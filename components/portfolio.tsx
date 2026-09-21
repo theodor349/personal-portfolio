@@ -98,7 +98,7 @@ const projects = [
 export function Portfolio() {
   return (
     <section
-      id="work"
+      id="portfolio"
       aria-labelledby="work-heading"
       className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 sm:py-32 lg:px-16"
     >
