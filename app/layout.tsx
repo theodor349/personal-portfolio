@@ -1,15 +1,31 @@
-import { Geist, Geist_Mono, Roboto } from "next/font/google"
+import type { Metadata } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+
+import { ThemeProvider } from "@/components/theme-provider"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
 
-const roboto = Roboto({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-geist-sans",
 })
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+})
+
+export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
+  title: "Theodor Risager · Software Engineer",
+  description:
+    "Software engineer focused on AI-assisted development, automation, and developer tooling.",
+  twitter: {
+    card: "summary_large_image",
+  },
+}
 
 export default function RootLayout({
   children,
@@ -20,7 +36,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", roboto.variable)}
+      className={`${geist.variable} ${geistMono.variable} antialiased`}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
