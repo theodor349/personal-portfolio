@@ -1,7 +1,9 @@
 import Image from "next/image"
 
 import { Contact } from "@/components/contact"
+import { CV } from "@/components/cv"
 import { Portfolio } from "@/components/portfolio"
+import { Timeline } from "@/components/timeline"
 
 export default function Page() {
   return (
@@ -25,7 +27,7 @@ export default function Page() {
               />
               <p className="text-base leading-7 text-muted-foreground sm:text-xl sm:leading-relaxed">
                 I&apos;m a software engineer focused on AI-assisted development,
-                automation, and developer tooling. I build reliable systems that
+                automation and developer tooling. I build reliable systems that
                 turn complex workflows into simple, dependable tools.
               </p>
             </div>
@@ -56,7 +58,7 @@ export default function Page() {
               Jump to my
             </span>
             <div className="flex items-center">
-              {["Portfolio", "Timeline", "Contact"].map((section) => (
+              {["Portfolio", "Timeline", "CV", "Contact"].map((section) => (
                 <a
                   key={section}
                   href={`#${section.toLowerCase()}`}
@@ -71,6 +73,8 @@ export default function Page() {
       </header>
 
       <Portfolio />
+      <Timeline />
+      <CV />
       <Contact />
     </main>
   )
