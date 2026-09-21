@@ -118,18 +118,19 @@ export function Portfolio() {
         {projects.map((project) => (
           <Dialog.Root key={project.title}>
             <Dialog.Trigger className="group flex min-h-72 w-full flex-col rounded-3xl border border-border bg-card p-6 text-left shadow-sm transition-[border-color,box-shadow,transform] duration-200 outline-none hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-foreground/8 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30">
-              <span className="flex size-16 items-center justify-center rounded-2xl border border-border bg-muted">
-                <Image
-                  src={project.logo}
-                  alt=""
-                  width={48}
-                  height={48}
-                  className="size-12 object-contain"
-                />
-              </span>
-
-              <span className="mt-8 text-2xl font-semibold tracking-[-0.03em]">
-                {project.title}
+              <span className="flex items-center justify-between gap-4">
+                <span className="text-2xl font-semibold tracking-[-0.03em]">
+                  {project.title}
+                </span>
+                <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl border border-border bg-muted">
+                  <Image
+                    src={project.logo}
+                    alt=""
+                    width={48}
+                    height={48}
+                    className="size-12 object-contain"
+                  />
+                </span>
               </span>
               <span className="mt-3 leading-relaxed text-muted-foreground">
                 {project.shortDescription}
