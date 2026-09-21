@@ -21,3 +21,6 @@ The color theme is following his CV and company website justenoughsolutions.com:
   --line: #dfe4ed;
   --muted: #667085;
 }
+
+## Project Architecture
+- Files are keept small and reusable components are created when possible to keep main components lean and readable!
