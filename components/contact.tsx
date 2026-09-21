@@ -57,7 +57,7 @@ export function Contact() {
             </div>
             <div className="order-3 overflow-hidden rounded-3xl border border-border bg-muted lg:mt-8">
               <iframe
-                src="https://www.google.com/maps?q=Aarhus%2C%20Denmark&output=embed"
+                src="https://maps.google.com/maps?q=56.1629%2C10.2039&z=6&output=embed"
                 title="Map showing Aarhus, Denmark"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
