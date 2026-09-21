@@ -98,16 +98,16 @@ const projects = [
 export function Portfolio() {
   return (
     <section
-      id="portfolio"
-      aria-labelledby="portfolio-heading"
-      className="mx-auto w-full max-w-6xl scroll-mt-16 px-6 py-24 sm:px-10 sm:py-32 lg:px-16"
+      id="work"
+      aria-labelledby="work-heading"
+      className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 sm:py-32 lg:px-16"
     >
       <div className="mb-10 max-w-2xl sm:mb-14">
         <p className="mb-3 font-mono text-xs font-medium tracking-[0.22em] text-primary uppercase">
           Selected work
         </p>
         <h2
-          id="portfolio-heading"
+          id="work-heading"
           className="text-4xl font-semibold tracking-[-0.04em] text-balance sm:text-5xl"
         >
           Products built to make everyday life simpler.
