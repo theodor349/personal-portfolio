@@ -1,8 +1,18 @@
 "use client"
 
 import { Dialog } from "@base-ui/react/dialog"
-import { ArrowUpRight, X } from "lucide-react"
+import { ArrowUpRight, ImageIcon, X } from "lucide-react"
 import Image from "next/image"
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+const screenshotPlaceholders = [1, 2, 3] as const
 
 const projects = [
   {
@@ -95,6 +105,34 @@ const projects = [
   },
 ] as const
 
+function ScreenshotCarousel({ title }: { title: string }) {
+  return (
+    <Carousel className="mt-7" aria-label={`${title} screenshots`}>
+      <CarouselContent className="ml-0 cursor-grab active:cursor-grabbing">
+        {screenshotPlaceholders.map((screenshot) => (
+          <CarouselItem
+            key={screenshot}
+            aria-label={`Screenshot ${screenshot} of ${screenshotPlaceholders.length}`}
+            className="pl-0"
+          >
+            <div className="flex aspect-16/10 flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-muted text-muted-foreground select-none">
+              <span className="grid size-12 place-items-center rounded-2xl bg-background shadow-sm">
+                <ImageIcon aria-hidden="true" className="size-5" />
+              </span>
+              <p className="text-sm font-medium">
+                Screenshot {screenshot} coming soon
+              </p>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+
+      <CarouselPrevious className="left-3 size-9 bg-background/90 shadow-sm backdrop-blur disabled:opacity-0" />
+      <CarouselNext className="right-3 size-9 bg-background/90 shadow-sm backdrop-blur disabled:opacity-0" />
+    </Carousel>
+  )
+}
+
 export function Portfolio() {
   return (
     <section
@@ -116,7 +154,7 @@ export function Portfolio() {
 
       <div className="grid gap-5 md:grid-cols-3">
         {projects.map((project) => (
-          <Dialog.Root key={project.title}>
+          <Dialog.Root key={project.title} disablePointerDismissal>
             <Dialog.Trigger className="group flex min-h-72 w-full flex-col rounded-3xl border border-border bg-card p-6 text-left shadow-sm transition-[border-color,box-shadow,transform] duration-200 outline-none hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-foreground/8 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30">
               <span className="flex items-center justify-between gap-4">
                 <span className="text-2xl font-semibold tracking-[-0.03em]">
@@ -146,7 +184,7 @@ export function Portfolio() {
 
             <Dialog.Portal>
               <Dialog.Backdrop className="fixed inset-0 z-50 min-h-dvh bg-black/45 backdrop-blur-sm transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
-              <Dialog.Popup className="fixed top-1/2 left-1/2 z-50 max-h-[calc(100dvh-2rem)] w-[calc(100vw-2rem)] max-w-xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-3xl border border-border bg-background p-6 text-foreground shadow-2xl transition-[scale,opacity] duration-200 outline-none data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0 sm:p-8">
+              <Dialog.Popup className="fixed top-1/2 left-1/2 z-50 max-h-[calc(100dvh-2rem)] w-[calc(100vw-2rem)] max-w-3xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-3xl border border-border bg-background p-6 text-foreground shadow-2xl transition-[scale,opacity] duration-200 outline-none data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0 sm:p-8">
                 <Dialog.Close
                   aria-label="Close project details"
                   className="absolute top-5 right-5 grid size-9 place-items-center rounded-full text-muted-foreground transition-colors outline-none hover:bg-muted hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/30"
@@ -169,7 +207,9 @@ export function Portfolio() {
                   </Dialog.Title>
                 </div>
 
-                <Dialog.Description className="mt-7 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                <ScreenshotCarousel title={project.title} />
+
+                <Dialog.Description className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
                   {project.description}
                 </Dialog.Description>
 
