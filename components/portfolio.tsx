@@ -1,8 +1,58 @@
 "use client"
 
 import { Dialog } from "@base-ui/react/dialog"
-import { ArrowUpRight, X } from "lucide-react"
+import { ArrowUpRight, ImageIcon, X } from "lucide-react"
 import Image from "next/image"
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+const screenshotPlaceholders = [1, 2, 3] as const
+
+const screenshotsByProject: Record<
+  string,
+  readonly { src: string; width: number; height: number }[]
+> = {
+  "Weekly Review": [
+    { src: "/portfolio/WR01.png", width: 2048, height: 1280 },
+    { src: "/portfolio/WR02.png", width: 2048, height: 1280 },
+    { src: "/portfolio/WR03.png", width: 2048, height: 1280 },
+  ],
+  "GGTime": [
+    { src: "/portfolio/GG01.png", width: 2048, height: 1280 },
+    { src: "/portfolio/GG02.png", width: 2048, height: 1280 },
+    { src: "/portfolio/GG04.png", width: 2048, height: 1280 },
+    { src: "/portfolio/GG03.png", width: 2048, height: 1280 },
+  ],
+  "My Cali": [
+    { src: "/portfolio/MyCali01.png", width: 2048, height: 1280 },
+    { src: "/portfolio/MyCali02.png", width: 2048, height: 1280 },
+    { src: "/portfolio/MyCali04.png", width: 2048, height: 1280 },
+    { src: "/portfolio/MyCali03.png", width: 2048, height: 1280 },
+    { src: "/portfolio/MyCali05.png", width: 2048, height: 1280 },
+  ],
+  "Rekura": [
+    { src: "/portfolio/Rekura01.png", width: 2048, height: 1280 },
+    { src: "/portfolio/Rekura02.png", width: 2048, height: 1280 },
+    { src: "/portfolio/Rekura03.png", width: 2048, height: 1280 },
+    { src: "/portfolio/Rekura04.png", width: 2048, height: 1280 },
+  ],
+  Folkbook: [
+    { src: "/portfolio/Folkbook01.png", width: 744, height: 1472 },
+    { src: "/portfolio/Folkbook02.png", width: 744, height: 1472 },
+    { src: "/portfolio/Folkbook03.png", width: 744, height: 1472 },
+  ],
+  EventRide: [
+    { src: "/portfolio/eventride01.png", width: 2048, height: 1280 },
+    { src: "/portfolio/eventride02.png", width: 2048, height: 1280 },
+    { src: "/portfolio/eventride03.png", width: 2048, height: 1280 },
+  ],
+}
 
 const projects = [
   {
@@ -95,6 +145,73 @@ const projects = [
   },
 ] as const
 
+const projectDialogHandles = projects.map(() => Dialog.createHandle())
+
+function ScreenshotCarousel({ title }: { title: string }) {
+  const screenshots = screenshotsByProject[title]
+  const slides = screenshots ?? screenshotPlaceholders
+
+  return (
+    <Carousel className="mt-7" aria-label={`${title} screenshots`}>
+      <CarouselContent className="-ml-3 cursor-grab active:cursor-grabbing">
+        {slides.map((screenshot, index) => {
+          const isPlaceholder = typeof screenshot === "number"
+          const isPortrait =
+            !isPlaceholder && screenshot.height > screenshot.width
+
+          return (
+            <CarouselItem
+              key={isPlaceholder ? screenshot : screenshot.src}
+              aria-label={`Screenshot ${index + 1} of ${slides.length}`}
+              className="pl-3"
+            >
+              {isPlaceholder ? (
+                <div className="flex aspect-16/10 flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-muted text-muted-foreground select-none">
+                  <span className="grid size-12 place-items-center rounded-2xl bg-background shadow-sm">
+                    <ImageIcon aria-hidden="true" className="size-5" />
+                  </span>
+                  <p className="text-sm font-medium">
+                    Screenshot {screenshot} coming soon
+                  </p>
+                </div>
+              ) : (
+                <div
+                  className={
+                    isPortrait
+                      ? "flex h-[min(65dvh,36rem)] items-center justify-center rounded-2xl border border-border bg-muted p-3 sm:p-5"
+                      : "overflow-hidden rounded-2xl border border-border bg-muted"
+                  }
+                >
+                  <Image
+                    src={screenshot.src}
+                    alt={`${title} app screenshot ${index + 1}`}
+                    width={screenshot.width}
+                    height={screenshot.height}
+                    sizes={
+                      isPortrait
+                        ? "(max-width: 48rem) 70vw, 18rem"
+                        : "(max-width: 48rem) calc(100vw - 5rem), 44rem"
+                    }
+                    draggable={false}
+                    className={
+                      isPortrait
+                        ? "h-full w-auto rounded-xl object-contain shadow-md select-none"
+                        : "aspect-16/10 h-auto w-full object-cover select-none"
+                    }
+                  />
+                </div>
+              )}
+            </CarouselItem>
+          )
+        })}
+      </CarouselContent>
+
+      <CarouselPrevious className="left-3 size-9 bg-background/90 shadow-sm backdrop-blur disabled:opacity-0" />
+      <CarouselNext className="right-3 size-9 bg-background/90 shadow-sm backdrop-blur disabled:opacity-0" />
+    </Carousel>
+  )
+}
+
 export function Portfolio() {
   return (
     <section
@@ -115,8 +232,12 @@ export function Portfolio() {
       </div>
 
       <div className="grid gap-5 md:grid-cols-3">
-        {projects.map((project) => (
-          <Dialog.Root key={project.title}>
+        {projects.map((project, index) => (
+          <Dialog.Root
+            key={project.title}
+            handle={projectDialogHandles[index]}
+            disablePointerDismissal
+          >
             <Dialog.Trigger className="group flex min-h-72 w-full flex-col rounded-3xl border border-border bg-card p-6 text-left shadow-sm transition-[border-color,box-shadow,transform] duration-200 outline-none hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-foreground/8 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30">
               <span className="flex items-center justify-between gap-4">
                 <span className="text-2xl font-semibold tracking-[-0.03em]">
@@ -145,8 +266,11 @@ export function Portfolio() {
             </Dialog.Trigger>
 
             <Dialog.Portal>
-              <Dialog.Backdrop className="fixed inset-0 z-50 min-h-dvh bg-black/45 backdrop-blur-sm transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
-              <Dialog.Popup className="fixed top-1/2 left-1/2 z-50 max-h-[calc(100dvh-2rem)] w-[calc(100vw-2rem)] max-w-xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-3xl border border-border bg-background p-6 text-foreground shadow-2xl transition-[scale,opacity] duration-200 outline-none data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0 sm:p-8">
+              <Dialog.Backdrop
+                onClick={() => projectDialogHandles[index].close()}
+                className="fixed inset-0 z-50 min-h-dvh bg-black/45 backdrop-blur-sm transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-[-webkit-touch-callout:none]:absolute"
+              />
+              <Dialog.Popup className="fixed top-1/2 left-1/2 z-50 max-h-[calc(100dvh-2rem)] w-[calc(100vw-2rem)] max-w-3xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-3xl border border-border bg-background p-6 text-foreground shadow-2xl transition-[scale,opacity] duration-200 outline-none data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0 sm:p-8">
                 <Dialog.Close
                   aria-label="Close project details"
                   className="absolute top-5 right-5 grid size-9 place-items-center rounded-full text-muted-foreground transition-colors outline-none hover:bg-muted hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/30"
@@ -169,7 +293,9 @@ export function Portfolio() {
                   </Dialog.Title>
                 </div>
 
-                <Dialog.Description className="mt-7 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                <ScreenshotCarousel title={project.title} />
+
+                <Dialog.Description className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
                   {project.description}
                 </Dialog.Description>
 
