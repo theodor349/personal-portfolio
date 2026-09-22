@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black background with rounded corners for icon -->
+  <rect width="64" height="64" rx="8" fill="#000000"/>
+
+  <!-- GG text - sized for icon -->
+  <text
+    x="32"
+    y="45"
+    font-family="Arial, sans-serif"
+    font-size="32"
+    font-weight="bold"
+    fill="#FFFFFF"
+    text-anchor="middle"
+    letter-spacing="1">GG</text>
+</svg>

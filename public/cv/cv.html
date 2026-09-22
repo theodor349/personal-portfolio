@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theodor Risager - Software Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #18243a; font-family: Inter, Avenir Next, Avenir, Helvetica, Arial, sans-serif; font-size: 10.1pt; line-height: 1.48; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { width: 210mm; min-height: 297mm; display: grid; grid-template-columns: 33% 67%; background: #fff; }
+    aside { padding: 13mm 9mm 10mm 14mm; background: #f5f8fb; border-right: 1px solid #dce5ee; }
+    main { padding: 13mm 14mm 10mm 11mm; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 18pt; letter-spacing: -.055em; line-height: 1; }
+    .portrait { width: 30mm; aspect-ratio: 1; display: block; object-fit: cover; border: 1.5mm solid #fff; border-radius: 50%; box-shadow: 0 2mm 5mm #18243a20; margin: 0 auto 5mm; }
+    .role { color: #087fb8; font-weight: 750; font-size: 10pt; margin-top: 3mm; }
+    .contact { display: grid; gap: 1mm; color: #53657c; font-size: 8.4pt; margin-top: 5.5mm; }
+    .contact a { color: inherit; text-decoration: none; }
+    .contact div { display: flex; align-items: center; gap: 1.4mm; }
+    .contact i { width: 3.1mm; color: #087fb8; font-size: 3.1mm; text-align: center; flex: none; }
+    .section { margin-top: 7mm; }
+    h2 { color: #087fb8; font-size: 8.6pt; letter-spacing: .115em; text-transform: uppercase; }
+    h2::after { content: ""; display: block; width: 22mm; height: 1.2px; margin-top: 2.5mm; background: #087fb8; }
+    aside h2 { display: flex; align-items: center; gap: 3mm; }
+    aside h2::after { display: block; flex: 1; width: auto; height: 1px; margin: 0; background: #b8dced; }
+    .timeline { margin-top: 3mm; display: grid; gap: 3.1mm; }
+    .entry { display: grid; gap: .3mm; }
+    .entry strong { font-size: 8.8pt; line-height: 1.18; }
+    .entry span { color: #087fb8; font-size: 8pt; font-weight: 700; line-height: 1.2; }
+    .entry small { color: #64748b; font-size: 7.5pt; line-height: 1.2; }
+    .focus { margin-top: 3.5mm; display: grid; gap: 2.5mm; }
+    .focus strong { display: block; font-size: 7.8pt; }
+    .focus span { display: block; color: #53657c; font-size: 7.4pt; line-height: 1.3; }
+    .kicker { color: #087fb8; font-size: 8.4pt; font-weight: 500; letter-spacing: .13em; text-transform: uppercase; }
+    .headline { font-size: 20pt; letter-spacing: -.045em; line-height: 1.08; margin-top: 2mm; max-width: 112mm; }
+    .intro { max-width: 112mm; margin-top: 5mm; color: #43536a; font-size: 9.8pt; line-height: 1.48; }
+    main .section { margin-top: 5.5mm; }
+    main h2 { color: #18243a; font-size: 10pt; }
+    .projects { margin-top: 3mm; display: grid; gap: 3.5mm; }
+    .project { border-left: 2px solid #b8dced; padding-left: 4mm; }
+    .project h3 { font-size: 11.3pt; letter-spacing: -.015em; line-height: 1.2; }
+    .meta { color: #087fb8; font-size: 8.5pt; font-weight: 700; margin-top: 1mm; }
+    .meta span { color: #64748b; font-weight: 500; }
+    .pills { display: flex; flex-wrap: wrap; gap: 1.4mm; margin-top: 1.8mm; }
+    .pill { background: #e7f4fa; border: 1px solid #d2eaf4; border-radius: 999px; color: #12648d; font-size: 7.3pt; font-weight: 650; line-height: 1; padding: 1.25mm 2.15mm; }
+    .project p { color: #394b63; font-size: 8.5pt; line-height: 1.38; margin-top: 1.8mm; }
+    @media screen { body { background: #e9eff5; padding: 16px; } .page { margin: auto; box-shadow: 0 10px 35px #18243a22; } }
+    @media print {
+      body::before { content: ""; position: fixed; inset: 0 auto 0 0; z-index: 0; width: 0; border-left: 69.3mm solid #f5f8fb; border-right: 1px solid #dce5ee; }
+      .page { display: block; position: relative; z-index: 1; padding-left: 69.3mm; background: transparent; break-after: page; }
+      aside { position: absolute; inset: 0 auto 0 0; width: 69.3mm; background: transparent; border: 0; }
+      main { -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+      .projects { display: block; }
+      .project { break-inside: avoid-page; page-break-inside: avoid; }
+      .project + .project { margin-top: 3.5mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside>
+      <header>
+        <img class="portrait" src="theodor.png" alt="Theodor Risager">
+        <h1>Theodor Risager</h1>
+        <div class="contact">
+          <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Aarhus, Denmark</div>
+          <div><i class="fa-solid fa-comment" aria-hidden="true"></i>Danish (Native)</div>
+          <div><i class="fa-solid fa-phone" aria-hidden="true"></i>+45 4023 8867</div>
+          <div><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:theodor349@gmail.com">theodor349@gmail.com</a></div>
+          <div><i class="fa-brands fa-linkedin" aria-hidden="true"></i><a href="https://linkedin.com/in/theodor-risager">/theodor-risager</a></div>
+          <div><i class="fa-brands fa-github" aria-hidden="true"></i><a href="https://github.com/theodor349">/theodor349</a></div>
+        </div>
+      </header>
+
+      <section class="section"><h2>Education</h2><div class="timeline">
+        <div class="entry"><strong>M.Sc. Computer Science</strong><span>Aalborg University</span><small>2022-2024 | GPA 10.8 / 12</small></div>
+        <div class="entry"><strong>B.Sc. Computer Science</strong><span>Aalborg University</span><small>2019-2022 | GPA 10.9 / 12</small></div>
+        <div class="entry"><strong>HTX</strong><span>Hansenberg</span><small>2016-2019 | GPA 10.4 / 12</small></div>
+      </div></section>
+
+      <section class="section"><h2>Experience</h2><div class="timeline">
+        <div class="entry"><strong>Founder</strong><span>Just Enough Solutions ApS</span><small>2025-Present</small></div>
+        <div class="entry"><strong>Software Pilot</strong><span>Trifork</span><small>2024-2025</small></div>
+        <div class="entry"><strong>Student RPA Developer &amp; Teaching Assistant</strong><span>Aalborg University</span><small>2021-2024</small></div>
+        <div class="entry"><strong>Data Analyst</strong><span>Epoka A/S</span><small>2020-2022</small></div>
+      </div></section>
+
+      <section class="section"><h2>Recognition</h2><div class="timeline">
+        <div class="entry"><strong>SPIN 2023</strong><span>Research paper presentation</span><small>Paris, 2023</small></div>
+        <div class="entry"><strong>DLG Business Competition</strong><span>DLG | HTX Hansenberg</span><small>2019 | 3rd Place, 20.000 DKK</small></div>
+        <div class="entry"><strong>Dansk Datalogi Dyst Finalist</strong><span>Dansk Datalogi Dyst</span><small>2018 &amp; 2019</small></div>
+        <div class="entry"><strong>DM in Game Development</strong><span>UngAalborg</span><small>2017 | 1st Groups, 2nd Audience</small></div>
+      </div>
+      </section>
+    </aside>
+    <main>
+      <header>
+        <p class="kicker">Reliable systems, thoughtful automation,</p>
+        <h2 class="headline">Software Engineering</h2>
+        <p class="intro">Software engineer specializing in AI-assisted development, automation and developer tooling. I build reliable systems that replace manual processes, make complex workflows manageable, and use automated testing to keep them dependable.</p>
+      </header>
+      <section class="section"><h2>Selected Projects</h2><div class="projects">
+        <article class="project"><h3>AI-Native Full-Stack SaaS Template</h3><p class="meta">Just Enough Solutions <span>| 2025-Present</span></p><div class="pills"><span class="pill">TS</span><span class="pill">Next.js</span><span class="pill">Convex</span><span class="pill">AI Assisted Development</span></div><p>Built and evolved a reusable full-stack SaaS template used to develop five web applications with AI coding agents as primary contributors. Designed project conventions, boundaries and skills to give agents the necessary context to work reliably while keeping code consistent and maintainable.</p></article>
+        <article class="project"><h3>Medical App Localization &amp; Automation Pipeline</h3><p class="meta">Trifork <span>| Client: Dawn Health | 2024-2025</span></p><div class="pills"><span class="pill">C#</span><span class="pill">.NET</span><span class="pill">Lokalise</span><span class="pill">Playwright</span><span class="pill">Maestro</span><span class="pill">Automation</span></div><p>Designed and delivered the localization workflow for a regulated web and iOS medical application across 30+ languages. Automated screenshot verification with Playwright and Maestro, covering 90% of UI states, and built tooling for customer review, feedback ingestion and completion tracking.</p></article>
+        <article class="project"><h3>RPA Platform &amp; Backend Infrastructure</h3><p class="meta">Aalborg University <span>| 2021-2024</span></p><div class="pills"><span class="pill">C#</span><span class="pill">.NET</span><span class="pill">UiPath</span><span class="pill">WPF</span><span class="pill">REST APIs</span><span class="pill">TDD</span></div><p>Built a .NET orchestration platform for university RPA workflows, exposing sensitive data to UiPath only when required rather than storing it in the third-party platform. Added APIs for credentials and configuration, removed hardcoded secrets, and built a WPF administration tool for fleet management and analytics.</p></article>
+        <article class="project"><h3>Automated ERP Data Migration</h3><p class="meta">Epoka A/S <span>| 2020</span></p><div class="pills"><span class="pill">C#</span><span class="pill">.NET</span><span class="pill">Excel</span><span class="pill">Data Transformation</span></div><p>Replaced a manual Excel-based transformation process with a C# console application that transformed exported database tables between legacy and new ERP systems. Reduced company-wide migration downtime by processing the full export in 10 minutes instead of hours.</p></article>
+        <article class="project"><h3>Sales Quote Automation</h3><p class="meta">Just Enough Solutions <span>| Client: Uni-Food Technic | 2026</span></p><div class="pills"><span class="pill">VBA</span><span class="pill">Word API</span><span class="pill">Technical Specifications</span><span class="pill">AI Assisted Development</span></div><p>Engineered an Excel VBA workflow that reads parts manifests and assembles descriptions, technical specifications and pricing from structured Word documents into a final sales quote. Defined standardized Word templates for deterministic parsing, replacing manual copy-paste with a single-click process.</p></article>
+        <article class="project"><h3>Automated Benchmarking & Data Analysis</h3><p class="meta">Aalborg University <span>| 7th semester | 2023</span></p><div class="pills"><span class="pill">C#</span><span class="pill">PowerShell</span><span class="pill">Tapaal</span><span class="pill">HPC</span><span class="pill">Data Analytics</span></div><p>Orchestrated 1,200+ PowerShell benchmark jobs on Aalborg University's HPC cluster with controlled environments and execution monitoring; built C# utilities to aggregate, analyze and statistically average repeated-run logs. Co-authored and presented the paper at SPIN 2023 in Paris.</p></article>
+      </div></section>
+    </main>
+  </div>
+</body>
+</html>

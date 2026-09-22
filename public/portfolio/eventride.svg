@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">EventRide routes converging at one destination</title>
+  <rect x="32" y="32" width="448" height="448" rx="140" fill="#f7f5ef"/>
+  <g fill="none" stroke="#416b62" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M112 166h92c58 0 63 90 132 90h20"/>
+    <path d="M112 256h244"/>
+    <path d="M112 346h92c58 0 63-90 132-90h20"/>
+  </g>
+  <g fill="#ee6b52">
+    <circle cx="112" cy="166" r="27"/>
+    <circle cx="112" cy="256" r="27"/>
+    <circle cx="112" cy="346" r="27"/>
+    <path d="M390 154c-40 0-72 32-72 72 0 52 72 119 72 119s72-67 72-119c0-40-32-72-72-72Z"/>
+  </g>
+  <circle cx="390" cy="226" r="28" fill="#f7f5ef"/>
+</svg>
