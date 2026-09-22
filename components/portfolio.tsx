@@ -29,6 +29,13 @@ const screenshotsByProject: Record<
     { src: "/portfolio/GG04.png", width: 2048, height: 1280 },
     { src: "/portfolio/GG03.png", width: 2048, height: 1280 },
   ],
+  "My Cali": [
+    { src: "/portfolio/MyCali01.png", width: 2048, height: 1280 },
+    { src: "/portfolio/MyCali02.png", width: 2048, height: 1280 },
+    { src: "/portfolio/MyCali04.png", width: 2048, height: 1280 },
+    { src: "/portfolio/MyCali03.png", width: 2048, height: 1280 },
+    { src: "/portfolio/MyCali05.png", width: 2048, height: 1280 },
+  ],
   "Rekura": [
     { src: "/portfolio/Rekura01.png", width: 2048, height: 1280 },
     { src: "/portfolio/Rekura02.png", width: 2048, height: 1280 },
