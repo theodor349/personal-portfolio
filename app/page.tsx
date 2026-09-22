@@ -3,7 +3,6 @@ import Image from "next/image"
 import { Contact } from "@/components/contact"
 import { CV } from "@/components/cv"
 import { Portfolio } from "@/components/portfolio"
-import { Timeline } from "@/components/timeline"
 
 export default function Page() {
   return (
@@ -58,7 +57,7 @@ export default function Page() {
               Jump to my
             </span>
             <div className="flex items-center">
-              {["Portfolio", "Timeline", "CV", "Contact"].map((section) => (
+              {["Portfolio", "CV", "Contact"].map((section) => (
                 <a
                   key={section}
                   href={`#${section.toLowerCase()}`}
@@ -73,7 +72,6 @@ export default function Page() {
       </header>
 
       <Portfolio />
-      <Timeline />
       <CV />
       <Contact />
     </main>

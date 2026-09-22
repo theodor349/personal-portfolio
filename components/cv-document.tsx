@@ -21,6 +21,8 @@ const embeddedStyles = `
   @media (max-width: 640px) {
     .page {
       display: block;
+      overflow: hidden;
+      border-radius: 1.125rem;
     }
 
     aside,
