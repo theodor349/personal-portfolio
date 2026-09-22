@@ -34,7 +34,7 @@ export function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="mx-auto w-full max-w-6xl px-6 pt-8 pb-24 sm:px-10 sm:pt-12 sm:pb-32 lg:px-16"
+      className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 sm:py-32 lg:px-16"
     >
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.8fr)] lg:items-end lg:gap-20">
         <div className="contents lg:block">

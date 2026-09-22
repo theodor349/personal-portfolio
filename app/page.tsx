@@ -6,7 +6,7 @@ import { Portfolio } from "@/components/portfolio"
 
 export default function Page() {
   return (
-    <main className="min-h-svh bg-[radial-gradient(circle,var(--border)_1px,transparent_1px)] bg-[size:24px_24px]">
+    <main className="min-h-svh bg-[radial-gradient(circle,var(--border)_1px,transparent_1px)] bg-[size:24px_24px] [&>section]:border-t [&>section]:border-border/60">
       <header className="mx-auto flex w-full max-w-6xl flex-col justify-center gap-10 px-6 py-8 sm:gap-12 sm:px-10 sm:py-10 md:min-h-svh lg:px-16">
         <div className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(16rem,0.72fr)] md:gap-16 lg:gap-24">
           <section className="order-2 md:order-1">
