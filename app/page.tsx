@@ -20,7 +20,7 @@ export default function Page() {
                 className="mb-4 block h-px w-10 bg-primary sm:mt-3 sm:mb-0 sm:w-16 sm:shrink-0"
               />
               <p className="text-base leading-7 text-muted-foreground sm:text-xl sm:leading-relaxed">
-                I&apos;m a software engineer focused on AI-assisted development,
+                I&apos;m a software developer focused on AI-assisted development,
                 automation and developer tooling. I build reliable systems that
                 turn complex workflows into simple, dependable tools.
               </p>
