@@ -14,6 +14,22 @@ import {
 
 const screenshotPlaceholders = [1, 2, 3] as const
 
+const screenshotsByProject: Record<
+  string,
+  readonly { src: string; width: number; height: number }[]
+> = {
+  Folkbook: [
+    { src: "/portfolio/Folkbook01.png", width: 744, height: 1472 },
+    { src: "/portfolio/Folkbook02.png", width: 744, height: 1472 },
+    { src: "/portfolio/Folkbook03.png", width: 744, height: 1472 },
+  ],
+  EventRide: [
+    { src: "/portfolio/eventride01.png", width: 2048, height: 1280 },
+    { src: "/portfolio/eventride02.png", width: 2048, height: 1280 },
+    { src: "/portfolio/eventride03.png", width: 2048, height: 1280 },
+  ],
+}
+
 const projects = [
   {
     title: "Rekura",
@@ -106,25 +122,62 @@ const projects = [
 ] as const
 
 function ScreenshotCarousel({ title }: { title: string }) {
+  const screenshots = screenshotsByProject[title]
+  const slides = screenshots ?? screenshotPlaceholders
+
   return (
     <Carousel className="mt-7" aria-label={`${title} screenshots`}>
       <CarouselContent className="ml-0 cursor-grab active:cursor-grabbing">
-        {screenshotPlaceholders.map((screenshot) => (
-          <CarouselItem
-            key={screenshot}
-            aria-label={`Screenshot ${screenshot} of ${screenshotPlaceholders.length}`}
-            className="pl-0"
-          >
-            <div className="flex aspect-16/10 flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-muted text-muted-foreground select-none">
-              <span className="grid size-12 place-items-center rounded-2xl bg-background shadow-sm">
-                <ImageIcon aria-hidden="true" className="size-5" />
-              </span>
-              <p className="text-sm font-medium">
-                Screenshot {screenshot} coming soon
-              </p>
-            </div>
-          </CarouselItem>
-        ))}
+        {slides.map((screenshot, index) => {
+          const isPlaceholder = typeof screenshot === "number"
+          const isPortrait =
+            !isPlaceholder && screenshot.height > screenshot.width
+
+          return (
+            <CarouselItem
+              key={isPlaceholder ? screenshot : screenshot.src}
+              aria-label={`Screenshot ${index + 1} of ${slides.length}`}
+              className="pl-0"
+            >
+              {isPlaceholder ? (
+                <div className="flex aspect-16/10 flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-muted text-muted-foreground select-none">
+                  <span className="grid size-12 place-items-center rounded-2xl bg-background shadow-sm">
+                    <ImageIcon aria-hidden="true" className="size-5" />
+                  </span>
+                  <p className="text-sm font-medium">
+                    Screenshot {screenshot} coming soon
+                  </p>
+                </div>
+              ) : (
+                <div
+                  className={
+                    isPortrait
+                      ? "flex h-[min(65dvh,36rem)] items-center justify-center rounded-2xl border border-border bg-muted p-3 sm:p-5"
+                      : "overflow-hidden rounded-2xl border border-border bg-muted"
+                  }
+                >
+                  <Image
+                    src={screenshot.src}
+                    alt={`${title} app screenshot ${index + 1}`}
+                    width={screenshot.width}
+                    height={screenshot.height}
+                    sizes={
+                      isPortrait
+                        ? "(max-width: 48rem) 70vw, 18rem"
+                        : "(max-width: 48rem) calc(100vw - 5rem), 44rem"
+                    }
+                    draggable={false}
+                    className={
+                      isPortrait
+                        ? "h-full w-auto rounded-xl object-contain shadow-md select-none"
+                        : "aspect-16/10 h-auto w-full object-cover select-none"
+                    }
+                  />
+                </div>
+              )}
+            </CarouselItem>
+          )
+        })}
       </CarouselContent>
 
       <CarouselPrevious className="left-3 size-9 bg-background/90 shadow-sm backdrop-blur disabled:opacity-0" />
