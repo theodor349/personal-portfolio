@@ -18,6 +18,11 @@ const screenshotsByProject: Record<
   string,
   readonly { src: string; width: number; height: number }[]
 > = {
+  "Weekly Review": [
+    { src: "/portfolio/WR01.png", width: 2048, height: 1280 },
+    { src: "/portfolio/WR02.png", width: 2048, height: 1280 },
+    { src: "/portfolio/WR03.png", width: 2048, height: 1280 },
+  ],
   Folkbook: [
     { src: "/portfolio/Folkbook01.png", width: 744, height: 1472 },
     { src: "/portfolio/Folkbook02.png", width: 744, height: 1472 },
@@ -121,6 +126,8 @@ const projects = [
   },
 ] as const
 
+const projectDialogHandles = projects.map(() => Dialog.createHandle())
+
 function ScreenshotCarousel({ title }: { title: string }) {
   const screenshots = screenshotsByProject[title]
   const slides = screenshots ?? screenshotPlaceholders
@@ -206,8 +213,12 @@ export function Portfolio() {
       </div>
 
       <div className="grid gap-5 md:grid-cols-3">
-        {projects.map((project) => (
-          <Dialog.Root key={project.title} disablePointerDismissal>
+        {projects.map((project, index) => (
+          <Dialog.Root
+            key={project.title}
+            handle={projectDialogHandles[index]}
+            disablePointerDismissal
+          >
             <Dialog.Trigger className="group flex min-h-72 w-full flex-col rounded-3xl border border-border bg-card p-6 text-left shadow-sm transition-[border-color,box-shadow,transform] duration-200 outline-none hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-foreground/8 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30">
               <span className="flex items-center justify-between gap-4">
                 <span className="text-2xl font-semibold tracking-[-0.03em]">
@@ -236,7 +247,10 @@ export function Portfolio() {
             </Dialog.Trigger>
 
             <Dialog.Portal>
-              <Dialog.Backdrop className="fixed inset-0 z-50 min-h-dvh bg-black/45 backdrop-blur-sm transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
+              <Dialog.Backdrop
+                onClick={() => projectDialogHandles[index].close()}
+                className="fixed inset-0 z-50 min-h-dvh bg-black/45 backdrop-blur-sm transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0 supports-[-webkit-touch-callout:none]:absolute"
+              />
               <Dialog.Popup className="fixed top-1/2 left-1/2 z-50 max-h-[calc(100dvh-2rem)] w-[calc(100vw-2rem)] max-w-3xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-3xl border border-border bg-background p-6 text-foreground shadow-2xl transition-[scale,opacity] duration-200 outline-none data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0 sm:p-8">
                 <Dialog.Close
                   aria-label="Close project details"
