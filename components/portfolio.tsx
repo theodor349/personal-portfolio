@@ -127,7 +127,7 @@ function ScreenshotCarousel({ title }: { title: string }) {
 
   return (
     <Carousel className="mt-7" aria-label={`${title} screenshots`}>
-      <CarouselContent className="ml-0 cursor-grab active:cursor-grabbing">
+      <CarouselContent className="-ml-3 cursor-grab active:cursor-grabbing">
         {slides.map((screenshot, index) => {
           const isPlaceholder = typeof screenshot === "number"
           const isPortrait =
@@ -137,7 +137,7 @@ function ScreenshotCarousel({ title }: { title: string }) {
             <CarouselItem
               key={isPlaceholder ? screenshot : screenshot.src}
               aria-label={`Screenshot ${index + 1} of ${slides.length}`}
-              className="pl-0"
+              className="pl-3"
             >
               {isPlaceholder ? (
                 <div className="flex aspect-16/10 flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-muted text-muted-foreground select-none">
