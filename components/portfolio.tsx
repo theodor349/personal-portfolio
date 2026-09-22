@@ -23,6 +23,12 @@ const screenshotsByProject: Record<
     { src: "/portfolio/WR02.png", width: 2048, height: 1280 },
     { src: "/portfolio/WR03.png", width: 2048, height: 1280 },
   ],
+  "GGTime": [
+    { src: "/portfolio/GG01.png", width: 2048, height: 1280 },
+    { src: "/portfolio/GG02.png", width: 2048, height: 1280 },
+    { src: "/portfolio/GG04.png", width: 2048, height: 1280 },
+    { src: "/portfolio/GG03.png", width: 2048, height: 1280 },
+  ],
   "Rekura": [
     { src: "/portfolio/Rekura01.png", width: 2048, height: 1280 },
     { src: "/portfolio/Rekura02.png", width: 2048, height: 1280 },
