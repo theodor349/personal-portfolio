@@ -104,7 +104,7 @@ const projects = [
       "Clerk",
       "Polar",
     ],
-    href: "https://weekly-review.vercel.app/",
+    href: "https://myweeklyreview.app",
   },
   {
     title: "GGTime",
@@ -131,7 +131,7 @@ const projects = [
       "Clerk",
       "Polar",
     ],
-    href: "https://my-fitness-two.vercel.app/",
+    href: "https://mycali.justenoughsolutions.com/",
   },
   {
     title: "EventRide",
