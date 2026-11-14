@@ -26,10 +26,13 @@
     aside h2 { display: flex; align-items: center; gap: 3mm; }
     aside h2::after { display: block; flex: 1; width: auto; height: 1px; margin: 0; background: #b8dced; }
     .timeline { margin-top: 3mm; display: grid; gap: 3.1mm; }
+    .entry p { margin-top: 1mm; color: #53657c; font-size: 8pt; line-height: 1.3; }
     .entry { display: grid; gap: .3mm; }
     .entry strong { font-size: 8.8pt; line-height: 1.18; }
     .entry span { color: #087fb8; font-size: 8pt; font-weight: 700; line-height: 1.2; }
     .entry small { color: #64748b; font-size: 7.5pt; line-height: 1.2; }
+    /* .entry p { text-align: justify; hyphens: auto; } */
+    .entry p { hyphens: auto; }
     .focus { margin-top: 3.5mm; display: grid; gap: 2.5mm; }
     .focus strong { display: block; font-size: 7.8pt; }
     .focus span { display: block; color: #53657c; font-size: 7.4pt; line-height: 1.3; }
@@ -48,12 +51,35 @@
     .pill { background: #e7f4fa; border: 1px solid #d2eaf4; border-radius: 999px; color: #12648d; font-size: 7.3pt; font-weight: 650; line-height: 1; padding: 1.25mm 2.15mm; }
     .project p { color: #394b63; font-size: 8.5pt; line-height: 1.38; margin-top: 1.8mm; }
     .project > p:last-child { text-align: justify; hyphens: auto; }
+    .skills { margin-top: 3.5mm; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 2.5mm 3mm; }
+    .skill-group { display: grid; gap: 0.8mm; }
+    /* .skill-group:nth-child(3) { grid-column: 1 / -1; } */
+    .skill-group strong { font-size: 7.8pt; line-height: 1.2; }
+    .skills .pills { gap: 1mm; margin-top: 0; }
+    .skills .pill { font-size: 6.8pt; padding: 0.9mm 1.6mm; }
+
+    /* When I'm Not Working */
+    .hobbies {
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+      margin-top: 3mm;
+    }
+    .hobbies p {
+      color: #394b63; 
+      font-size: 8.5pt; 
+      line-height: 1.38;
+      text-align: justify; 
+      hyphens: auto;
+    }
+
     @media screen { body { background: #e9eff5; padding: 16px; } .page { margin: auto; box-shadow: 0 10px 35px #18243a22; } }
     @media print {
-      body::before { content: ""; position: fixed; inset: 0 auto 0 0; z-index: 0; width: 0; border-left: 69.3mm solid #f5f8fb; border-right: 1px solid #dce5ee; }
-      .page { display: block; position: relative; z-index: 1; padding-left: 69.3mm; background: transparent; break-after: page; }
-      aside { position: absolute; inset: 0 auto 0 0; width: 69.3mm; background: transparent; border: 0; }
-      main { -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+      body::before { content: ""; position: fixed; inset: 0 auto 0 0; z-index: 0; width: 0; border-left: 72mm solid #f5f8fb; border-right: 1px solid #dce5ee; }
+      .page { display: block; position: relative; z-index: 1; padding-left: 72mm; background: transparent; break-after: page; }
+      aside { position: absolute; inset: 0 auto 0 0; width: 72mm; background: transparent; border: 0; }
+      main { min-height: 280mm; display: flex; flex-direction: column; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+      main > .section:last-child { margin-top: auto; padding-top: 5.5mm; }
       .projects { display: block; }
       .project { break-inside: avoid-page; page-break-inside: avoid; }
       .project + .project { margin-top: 3.5mm; }
@@ -69,7 +95,9 @@
         <div class="contact">
           <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Aarhus, Denmark</div>
           <div><i class="fa-solid fa-comment" aria-hidden="true"></i>Danish (Native)</div>
+          <div><i class="fa-solid fa-comment" aria-hidden="true"></i>English (Fluent)</div>
           <div><i class="fa-solid fa-phone" aria-hidden="true"></i>+45 4023 8867</div>
+          <div><i class="fa-solid fa-globe" aria-hidden="true"></i><a href="https://theodorrisager.dk">theodorrisager.dk</a></div>
           <div><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:theodor349@gmail.com">theodor349@gmail.com</a></div>
           <div><i class="fa-brands fa-linkedin" aria-hidden="true"></i><a href="https://linkedin.com/in/theodor-risager">/theodor-risager</a></div>
           <div><i class="fa-brands fa-github" aria-hidden="true"></i><a href="https://github.com/theodor349">/theodor349</a></div>
@@ -77,40 +105,136 @@
       </header>
 
       <section class="section"><h2>Education</h2><div class="timeline">
-        <div class="entry"><strong>M.Sc. Computer Science</strong><span>Aalborg University</span><small>2022-2024 | GPA 10.8 / 12</small></div>
-        <div class="entry"><strong>B.Sc. Computer Science</strong><span>Aalborg University</span><small>2019-2022 | GPA 10.9 / 12</small></div>
-        <div class="entry"><strong>HTX</strong><span>Hansenberg</span><small>2016-2019 | GPA 10.4 / 12</small></div>
+        <div class="entry"><strong>B.Sc &amp; M.Sc. Computer Science</strong><span>Aalborg University</span><small>2019-2024 | GPA 10.8 / 12</small></div>
+        <!-- <div class="entry"><strong>M.Sc. Computer Science</strong><span>Aalborg University</span><small>2022-2024 | GPA 10.8 / 12</small></div> -->
+        <!-- <div class="entry"><strong>B.Sc. Computer Science</strong><span>Aalborg University</span><small>2019-2022 | GPA 10.9 / 12</small></div> -->
+        <!-- <div class="entry"><strong>HTX</strong><span>Hansenberg</span><small>2016-2019 | GPA 10.4 / 12</small></div> -->
       </div></section>
 
       <section class="section"><h2>Experience</h2><div class="timeline">
-        <div class="entry"><strong>Founder</strong><span>Just Enough Solutions ApS</span><small>2025-Present</small></div>
-        <div class="entry"><strong>Software Pilot</strong><span>Trifork</span><small>2024-2025</small></div>
-        <div class="entry"><strong>Student RPA Developer &amp; Teaching Assistant</strong><span>Aalborg University</span><small>2021-2024</small></div>
-        <div class="entry"><strong>Data Analyst</strong><span>Epoka</span><small>2020-2022</small></div>
+        <div class="entry">
+          <strong>Founder &amp; Software Engineer</strong>
+          <span>Just Enough Solutions</span>
+          <small>2025-Present</small>
+          <!-- <p>Building reusable SaaS infrastructure and tooling for agent-assisted software development.</p> -->
+        </div>
+
+        <div class="entry">
+          <strong>Software Consultant</strong>
+          <span>Trifork</span>
+          <small>2024-2025</small>
+          <!-- <p>Owned and developed the localization pipeline for a regulated medical application across 30+ languages.</p> -->
+        </div>
+
+        <div class="entry">
+          <strong>RPA Developer</strong>
+          <span>Aalborg University</span>
+          <small>2021-2024</small>
+          <!-- <p>Designed, built and maintained the shared RPA platform, .NET backend and developer framework.</p> -->
+        </div>
+
+        <div class="entry">
+          <strong>Data Analyst</strong>
+          <span>Epoka</span>
+          <small>2020-2022</small>
+          <!-- <p>Built automation and data tooling for ERP migration.</p> -->
+        </div>
       </div></section>
 
       <section class="section"><h2>Recognition</h2><div class="timeline">
-        <div class="entry"><strong>SPIN 2023</strong><span>Research paper presentation</span><small>Paris, 2023</small></div>
-        <div class="entry"><strong>DLG Business Competition</strong><span>DLG | HTX Hansenberg</span><small>2019 | 3rd Place, 20.000 DKK</small></div>
-        <div class="entry"><strong>Dansk Datalogi Dyst Finalist</strong><span>Dansk Datalogi Dyst</span><small>2018 &amp; 2019</small></div>
-        <div class="entry"><strong>DM in Game Development</strong><span>UngAalborg</span><small>2017 | 1st Groups, 2nd Audience</small></div>
+        <div class="entry">
+          <strong>SPIN 2023</strong>
+          <span>Research paper presentation</span>
+          <small>7th semester | Paris, 2023</small>
+          <p>Co-developed a search algorithm for state-space exploration. The resulting paper was published at SPIN, where I was selected to present it in Paris.</p>
+        </div>
+        <div class="entry">
+          <strong>DLG Business Competition</strong>
+          <span>HTX Hansenberg</span>
+          <small>2019 | 3rd Place, 20.000 DKK</small>
+          <p>As the only gymnasium student, I competed solo against teams of master's students from CBS and Aarhus BSS.</p>
+        </div>
+        <!-- <div class="entry"><strong>Dansk Datalogi Dyst Finalist</strong><span>Dansk Datalogi Dyst</span><small>2018 &amp; 2019</small></div> -->
+        <!-- <div class="entry"><strong>DM in Game Development</strong><span>UngAalborg</span><small>2017 | 1st Groups, 2nd Audience</small></div> -->
       </div>
       </section>
     </aside>
     <main>
       <header>
-        <p class="kicker">Reliable systems, thoughtful automation,</p>
-        <h2 class="headline">Software Engineering</h2>
-        <p class="intro">Software engineer specializing in AI-assisted development, automation and developer tooling. I build reliable systems that replace manual processes, make complex workflows manageable, and use automated testing to keep them dependable.</p>
+        <p class="kicker">Automation · Developer Tooling</h2>
+        <h2 class="headline">Backend Engineer</h2>
+        <p class="intro">I tend to build software when I encounter a problem more than once. That has led to everything from tools for tracking how I spend my time to apps that help my friends and I organize game nights.</p>
+        <p class="intro">I enjoy simplifying complex problems and building systems that are easy to maintain and extend. Over the past year, I've been applying that same mindset to AI-assisted development, exploring how to make coding agents more reliable and independent.</p>
       </header>
+
+        <!-- <article class="project"><h3>RPA Framework &amp; Backend Infrastructure</h3><p class="meta">Aalborg University <span>| 2021-2024</span></p><div class="pills"><span class="pill">C#</span><span class="pill">.NET</span><span class="pill">UiPath</span><span class="pill">WPF</span><span class="pill">REST APIs</span><span class="pill">TDD</span></div><p>Built a .NET orchestration platform, WPF client for fleet management and component-based UiPath framework for university RPA workflows. Designed reusable, independently upgradeable components to simplify maintenance across robots, while APIs provided credentials and configuration only when needed, avoiding hardcoded secrets and sensitive data in UiPath.</p></article> -->
       <section class="section"><h2>Selected Projects</h2><div class="projects">
-        <article class="project"><h3>AI-Native Full-Stack SaaS Template</h3><p class="meta">Just Enough Solutions <span>| 2025-Present</span></p><div class="pills"><span class="pill">TS</span><span class="pill">Next.js</span><span class="pill">Convex</span><span class="pill">AI Assisted Development</span></div><p>Built and evolved a reusable full-stack SaaS template used to develop five web applications with AI coding agents as primary contributors. Designed project conventions, boundaries and skills to give agents the necessary context to work reliably while keeping code consistent and maintainable.</p></article>
-        <article class="project"><h3>Medical App Localization &amp; Automation Pipeline</h3><p class="meta">Trifork <span>| Client: Dawn Health | 2024-2025</span></p><div class="pills"><span class="pill">C#</span><span class="pill">.NET</span><span class="pill">Lokalise</span><span class="pill">Playwright</span><span class="pill">Maestro</span><span class="pill">Automation</span></div><p>Designed and delivered the localization workflow for a regulated web and iOS medical application across 30+ languages. Automated screenshot verification with Playwright and Maestro, covering 90% of UI states, and built tooling for customer review, feedback ingestion and completion tracking.</p></article>
-        <article class="project"><h3>RPA Platform &amp; Backend Infrastructure</h3><p class="meta">Aalborg University <span>| 2021-2024</span></p><div class="pills"><span class="pill">C#</span><span class="pill">.NET</span><span class="pill">UiPath</span><span class="pill">WPF</span><span class="pill">REST APIs</span><span class="pill">TDD</span></div><p>Built a .NET orchestration platform for university RPA workflows, exposing sensitive data to UiPath only when required rather than storing it in the third-party platform. Added APIs for credentials and configuration, removed hardcoded secrets, and built a WPF administration tool for fleet management and analytics.</p></article>
+        <article class="project"><h3>Agent-Friendly SaaS Development Platform</h3><p class="meta">Just Enough Solutions <span>| 2025-Present</span></p><div class="pills"><span class="pill">TS</span><span class="pill">Next.js</span><span class="pill">Convex</span><span class="pill">AI Assisted Development</span></div><p>Building a reusable SaaS foundation and development environment for AI coding agents. Working extensively with context management, agent instructions and skills to improve agent reliability. Designing isolated workspaces where agents can run their own applications and integrations, alongside automated validation through tests, type checking and static analysis. The goal is to enable agents to implement and verify changes independently.</p></article>
+        <article class="project"><h3>Medical App Localization &amp; Automation Pipeline</h3><p class="meta">Trifork <span>| Client: Dawn Health | 2024-2025</span></p><div class="pills"><span class="pill">C#</span><span class="pill">.NET</span><span class="pill">Lokalise</span><span class="pill">Playwright</span><span class="pill">Maestro</span><span class="pill">Automation</span></div><p>Took ownership of localization for a regulated medical application across 30+ languages, starting without an established process or handover. Mapped out the workflow, coordinated stakeholders and built tools for customer review, feedback handling and progress tracking. Automated screenshot verification using Playwright and Maestro, covering approximately 90% of UI states.</p></article>
+        <article class="project"><h3>RPA Framework &amp; Backend Infrastructure</h3><p class="meta">Aalborg University <span>| 2021-2024</span></p><div class="pills"><span class="pill">C#</span><span class="pill">.NET</span><span class="pill">UiPath</span><span class="pill">WPF</span><span class="pill">REST APIs</span><span class="pill">TDD</span></div><p>Designed and built a shared .NET backend for university RPA workflows, deployed in Docker on Azure with CI/CD and automated testing. Added centralized configuration, structured logging, secure credential APIs and a WPF administration tool. Built a component-based UiPath framework with independently versioned components, reducing shared framework upgrades from hours per robot to minutes.</p></article>
         <article class="project"><h3>Automated ERP Data Migration</h3><p class="meta">Epoka A/S <span>| 2020</span></p><div class="pills"><span class="pill">C#</span><span class="pill">.NET</span><span class="pill">Excel</span><span class="pill">Data Transformation</span></div><p>Replaced a manual Excel-based transformation process with a C# console application that transformed exported database tables between legacy and new ERP systems. Reduced company-wide migration downtime by processing the full export in 10 minutes instead of hours.</p></article>
-        <article class="project"><h3>Sales Quote Automation</h3><p class="meta">Just Enough Solutions <span>| Client: Uni-Food Technic | 2026</span></p><div class="pills"><span class="pill">VBA</span><span class="pill">Word API</span><span class="pill">Technical Specifications</span><span class="pill">AI Assisted Development</span></div><p>Engineered an Excel VBA workflow that reads parts manifests and assembles descriptions, technical specifications and pricing from structured Word documents into a final sales quote. Defined standardized Word templates for deterministic parsing, replacing manual copy-paste with a single-click process.</p></article>
+        <article class="project"><h3>Sales Quote Automation</h3><p class="meta">Just Enough Solutions <span>| Client: Uni-Food Technic | 2026</span></p><div class="pills"><span class="pill">VBA</span><span class="pill">Word API</span><span class="pill">Technical Specifications</span><span class="pill">AI Assisted Development</span></div><p>Built an Excel macro that reads product manifests and assembles descriptions, technical specifications and pricing from structured Word documents into a final sales quote. Defined standardized Word templates for deterministic parsing, replacing manual copy-paste with a single-click process.</p></article>
         <article class="project"><h3>Automated Benchmarking & Data Analysis</h3><p class="meta">Aalborg University <span>| 7th semester | 2023</span></p><div class="pills"><span class="pill">C#</span><span class="pill">PowerShell</span><span class="pill">Tapaal</span><span class="pill">HPC</span><span class="pill">Data Analytics</span></div><p>Orchestrated 1,200+ PowerShell benchmark jobs on Aalborg University's HPC cluster with controlled environments and execution monitoring; built C# utilities to aggregate, analyze and statistically average repeated-run logs. Co-authored and presented the paper at SPIN 2023 in Paris.</p></article>
       </div></section>
+
+      <section class="section"><h2>When I am not working</h2><div class="hobbies">
+        <p>You'll usually find me on the dance floor or hanging from a pull-up bar. In 2022 I traded 13 years of self-defence for salsa and bachata and fell in love with it, so in 2024 I attended 14 dance festivals dancing with people from all over Europe.</p>
+        <p>To stay fit, I practice calisthenics. What I love about it is that it's not just about building strength, but also flexibility and control. I'm quite competitive, so I also compete in obstacle course racing, where I now compete at elite level.</p>
+      </div></section>
+
+
+      <!-- <section class="section">
+        <h2>Technical Skills</h2>
+
+        <div class="skills">
+          <div class="skill-group">
+            <strong>Languages:</strong>
+            <div class="pills">
+              <span class="pill">C#</span>
+              <span class="pill">TypeScript</span>
+              <span class="pill">SQL</span>
+              <span class="pill">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <strong>Frameworks &amp; Platforms:</strong>
+            <div class="pills">
+              <span class="pill">.NET</span>
+              <span class="pill">Azure</span>
+              <span class="pill">React</span>
+              <span class="pill">Next.js</span>
+              <span class="pill">WPF</span>
+              <span class="pill">UiPath</span>
+              <span class="pill">Convex</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <strong>Software Engineering:</strong>
+            <div class="pills">
+              <span class="pill">REST APIs</span>
+              <span class="pill">TDD</span>
+              <span class="pill">CI/CD</span>
+              <span class="pill">Git</span>
+              <span class="pill">Developer Tooling</span>
+              <span class="pill">Process Automation</span>
+              <span class="pill">Microservices</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <strong>AI-Assisted Development:</strong>
+            <div class="pills">
+              <span class="pill">Coding Agents</span>
+              <span class="pill">Agentic Workflows</span>
+              <span class="pill">Agent Skill Design</span>
+              <span class="pill">Context Management</span>
+              <span class="pill">Automated Validation</span>
+            </div>
+          </div>
+        </div>
+      </section> -->
     </main>
   </div>
 </body>
